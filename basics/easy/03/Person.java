@@ -60,7 +60,7 @@ public class Person{
     public void clear(){
         name = "";
         age = 0;
-        points = 0;
+        points = 0; 
         status = "";
         balance = 0.0;
     }

@@ -17,6 +17,7 @@ public class HonorStudent extends Student {
     public HonorStudent(String name, int id, double g1, double g2, double g3, double bonusPoints) {
         super(name, id, g1, g2, g3);
         // TODO: store bonusPoints
+        this.bonusPoints = bonusPoints;
     }
 
     // HonorStudent(String name, int id, double g1, double g2, double g3)
@@ -24,17 +25,19 @@ public class HonorStudent extends Student {
     public HonorStudent(String name, int id, double g1, double g2, double g3) {
         // TODO: chain to the constructor above:
         // this(name, id, g1, g2, g3, 5.0);
+        this(name, id, g1, g2, g3, 5.0);
+
     }
 
     // ----------------------- Getter / Setter -----------------------
 
     public double getBonusPoints() {
         // TODO: implement
-        return 0;
+        return bonusPoints;
     }
 
     public void setBonusPoints(double bonusPoints) {
-        // TODO: implement
+        this.bonusPoints = bonusPoints;
     }
 
     // --------------- Overridden AGAIN (2nd override in the chain) ---------------
@@ -44,8 +47,8 @@ public class HonorStudent extends Student {
     // recompute the average yourself.
     @Override
     public double getScore() {
-        // TODO: implement
-        return 0;
+        
+        return super.getScore() + bonusPoints;
     }
 
     // displayInfo() // expects: nothing
@@ -56,6 +59,8 @@ public class HonorStudent extends Student {
     @Override
     public void displayInfo() {
         // TODO: implement
+        System.out.println("*** HONOR STUDENT ***");
+        super.displayInfo();
     }
 
     // printReport() // expects: nothing
@@ -64,6 +69,8 @@ public class HonorStudent extends Student {
     @Override
     public void printReport() {
         // TODO: implement
+        super.printReport();
+        System.out.println("Honor Bonus: " + bonusPoints);
     }
 
     // toString() // expects: nothing
@@ -71,6 +78,6 @@ public class HonorStudent extends Student {
     @Override
     public String toString() {
         // TODO: implement
-        return null;
+        return super.toString() + " [HONOR]";
     }
 }

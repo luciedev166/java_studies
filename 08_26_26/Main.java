@@ -26,13 +26,13 @@ public class Main {
 
     public static void main(String[] args) {
         test1_ConstructionGettersSettersOverriding();
-        // test2_ConstructorOverloading();
-        // test3_AddGradeEdgeCase();
-        // test4_SetGrade();
-        // test5_MethodOverloading();
-        // test6_Interfaces();
-        // test7_EqualsIgnoreCase();
-        // test8_HonorStudentInheritance();
+        test2_ConstructorOverloading();
+        test3_AddGradeEdgeCase();
+        test4_SetGrade();
+        test5_MethodOverloading();
+        test6_Interfaces();
+        test7_EqualsIgnoreCase();
+        test8_HonorStudentInheritance();
         // test9_ObjectReferencePassing();
         // test10_ArraysOfObjects();
         // test11_Leaderboard();
@@ -76,196 +76,196 @@ public class Main {
     // ===================================================================
     // TEST 2: Constructor Overloading (1, 2, 3-grade versions)
     // ===================================================================
-    // private static void test2_ConstructorOverloading() {
-    //     System.out.println("========== TEST 2: Constructor Overloading (1, 2, 3-grade versions) ==========");
+    private static void test2_ConstructorOverloading() {
+        System.out.println("========== TEST 2: Constructor Overloading (1, 2, 3-grade versions) ==========");
 
-    //     // Student(String name, int id) -- no grades yet
-    //     Student s2 = new Student("Ben Dela Cruz", 102);
-    //     s2.displayInfo();
-    //     // Expected:
-    //     // Student: Ben Dela Cruz (ID: 102)
-    //     // Grades: (none)
-    //     // Average: 0.0
+        // Student(String name, int id) -- no grades yet
+        Student s2 = new Student("Ben Dela Cruz", 102);
+        s2.displayInfo();
+        // Expected:
+        // Student: Ben Dela Cruz (ID: 102)
+        // Grades: (none)
+        // Average: 0.0
 
-    //     // Student(String name, int id, double grade1) -- ONE-grade version
-    //     Student s2b = new Student("Cara Lim", 105, 100);
-    //     s2b.displayInfo();
-    //     // Expected:
-    //     // Student: Cara Lim (ID: 105)
-    //     // Grades: 100.0
-    //     // Average: 100.0
+        // Student(String name, int id, double grade1) -- ONE-grade version
+        Student s2b = new Student("Cara Lim", 105, 100);
+        s2b.displayInfo();
+        // Expected:
+        // Student: Cara Lim (ID: 105)
+        // Grades: 100.0
+        // Average: 100.0
 
-    //     // Student(String name, int id, double grade1, double grade2) -- TWO-grade version
-    //     Student s3 = new Student("Carlo Reyes", 103, 70, 80);
-    //     s3.displayInfo();
-    //     // Expected:
-    //     // Student: Carlo Reyes (ID: 103)
-    //     // Grades: 70.0 80.0
-    //     // Average: 75.0
+        // Student(String name, int id, double grade1, double grade2) -- TWO-grade version
+        Student s3 = new Student("Carlo Reyes", 103, 70, 80);
+        s3.displayInfo();
+        // Expected:
+        // Student: Carlo Reyes (ID: 103)
+        // Grades: 70.0 80.0
+        // Average: 75.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 3: addGrade() -- called repeatedly, plus an edge case
-    // // ===================================================================
-    // private static void test3_AddGradeEdgeCase() {
-    //     System.out.println("========== TEST 3: addGrade() -- called repeatedly, plus an edge case ==========");
+    // ===================================================================
+    // TEST 3: addGrade() -- called repeatedly, plus an edge case
+    // ===================================================================
+    private static void test3_AddGradeEdgeCase() {
+        System.out.println("========== TEST 3: addGrade() -- called repeatedly, plus an edge case ==========");
 
-    //     Student s2 = new Student("Ben Dela Cruz", 102);
+        Student s2 = new Student("Ben Dela Cruz", 102);
 
-    //     // addGrade(double grade) // expects: a grade value
-    //     // outputs: appends it if there's room (max 3), else does nothing
-    //     s2.addGrade(100);
-    //     s2.addGrade(80);
-    //     s2.displayInfo();
-    //     // Expected:
-    //     // Student: Ben Dela Cruz (ID: 102)
-    //     // Grades: 100.0 80.0
-    //     // Average: 90.0
+        // addGrade(double grade) // expects: a grade value
+        // outputs: appends it if there's room (max 3), else does nothing
+        s2.addGrade(100);
+        s2.addGrade(80);
+        s2.displayInfo();
+        // Expected:
+        // Student: Ben Dela Cruz (ID: 102)
+        // Grades: 100.0 80.0
+        // Average: 90.0
 
-    //     s2.addGrade(60); // array now FULL (3/3)
-    //     s2.displayInfo();
-    //     // Expected:
-    //     // Student: Ben Dela Cruz (ID: 102)
-    //     // Grades: 100.0 80.0 60.0
-    //     // Average: 80.0
+        s2.addGrade(60); // array now FULL (3/3)
+        s2.displayInfo();
+        // Expected:
+        // Student: Ben Dela Cruz (ID: 102)
+        // Grades: 100.0 80.0 60.0
+        // Average: 80.0
 
-    //     // EDGE CASE: array is full -- this 4th addGrade() call must be silently ignored
-    //     s2.addGrade(999);
-    //     s2.displayInfo();
-    //     // Expected (UNCHANGED from above):
-    //     // Student: Ben Dela Cruz (ID: 102)
-    //     // Grades: 100.0 80.0 60.0
-    //     // Average: 80.0
+        // EDGE CASE: array is full -- this 4th addGrade() call must be silently ignored
+        s2.addGrade(999);
+        s2.displayInfo();
+        // Expected (UNCHANGED from above):
+        // Student: Ben Dela Cruz (ID: 102)
+        // Grades: 100.0 80.0 60.0
+        // Average: 80.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 4: setGrade() -- overwrite in place, size unchanged
-    // // ===================================================================
-    // private static void test4_SetGrade() {
-    //     System.out.println("========== TEST 4: setGrade() -- overwrite in place, size unchanged ==========");
+    // ===================================================================
+    // TEST 4: setGrade() -- overwrite in place, size unchanged
+    // ===================================================================
+    private static void test4_SetGrade() {
+        System.out.println("========== TEST 4: setGrade() -- overwrite in place, size unchanged ==========");
 
-    //     Student s1 = new Student("Ana Cruz", 101, 90, 85, 95);
+        Student s1 = new Student("Ana Cruz", 101, 90, 85, 95);
 
-    //     // setGrade(int index, double grade) // expects: 0-based index + new value
-    //     // outputs: overwrites grades[index]; ignores out-of-bounds index
-    //     s1.setGrade(1, 100); // grades were 90, 85, 95 -> overwrite index 1
-    //     s1.displayInfo();
-    //     // Expected:
-    //     // Student: Ana Cruz (ID: 101)
-    //     // Grades: 90.0 100.0 95.0
-    //     // Average: 95.0
+        // setGrade(int index, double grade) // expects: 0-based index + new value
+        // outputs: overwrites grades[index]; ignores out-of-bounds index
+        s1.setGrade(1, 100); // grades were 90, 85, 95 -> overwrite index 1
+        s1.displayInfo();
+        // Expected:
+        // Student: Ana Cruz (ID: 101)
+        // Grades: 90.0 100.0 95.0
+        // Average: 95.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 5: Method Overloading -- computeAverage() vs computeAverage(bonus)
-    // // ===================================================================
-    // private static void test5_MethodOverloading() {
-    //     System.out.println("========== TEST 5: Method Overloading -- computeAverage() vs computeAverage(bonus) ==========");
+    // ===================================================================
+    // TEST 5: Method Overloading -- computeAverage() vs computeAverage(bonus)
+    // ===================================================================
+    private static void test5_MethodOverloading() {
+        System.out.println("========== TEST 5: Method Overloading -- computeAverage() vs computeAverage(bonus) ==========");
 
-    //     Student s1 = new Student("Ana Cruz", 101, 90, 100, 95); // avg 95.0
+        Student s1 = new Student("Ana Cruz", 101, 90, 100, 95); // avg 95.0
 
-    //     // computeAverage() // expects: nothing // outputs: average of current grades (0.0 if none)
-    //     System.out.println("s1 average: " + s1.computeAverage()); // Expected: s1 average: 95.0
+        // computeAverage() // expects: nothing // outputs: average of current grades (0.0 if none)
+        System.out.println("s1 average: " + s1.computeAverage()); // Expected: s1 average: 95.0
 
-    //     // computeAverage(double bonus) -- OVERLOADED version, adds a flat bonus
-    //     System.out.println("s1 average with +5 bonus: " + s1.computeAverage(5));
-    //     // Expected: s1 average with +5 bonus: 100.0
+        // computeAverage(double bonus) -- OVERLOADED version, adds a flat bonus
+        System.out.println("s1 average with +5 bonus: " + s1.computeAverage(5));
+        // Expected: s1 average with +5 bonus: 100.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 6: Interfaces -- Rankable & Reportable ("multiple inheritance")
-    // // ===================================================================
-    // private static void test6_Interfaces() {
-    //     System.out.println("========== TEST 6: Interfaces -- Rankable & Reportable ('multiple inheritance') ==========");
-    //     // Student implements BOTH Rankable and Reportable. Java classes can't
-    //     // extend more than one class, but they CAN implement more than one
-    //     // interface -- this is how Java fakes "multiple inheritance."
+    // ===================================================================
+    // TEST 6: Interfaces -- Rankable & Reportable ("multiple inheritance")
+    // ===================================================================
+    private static void test6_Interfaces() {
+        System.out.println("========== TEST 6: Interfaces -- Rankable & Reportable ('multiple inheritance') ==========");
+        // Student implements BOTH Rankable and Reportable. Java classes can't
+        // extend more than one class, but they CAN implement more than one
+        // interface -- this is how Java fakes "multiple inheritance."
 
-    //     Student s1 = new Student("Ana Cruz", 101, 90, 100, 95); // avg 95.0
+        Student s1 = new Student("Ana Cruz", 101, 90, 100, 95); // avg 95.0
 
-    //     // getScore() // expects: nothing // outputs: ranking score (Student's version = computeAverage())
-    //     System.out.println("s1 score: " + s1.getScore()); // Expected: s1 score: 95.0
+        // getScore() // expects: nothing // outputs: ranking score (Student's version = computeAverage())
+        System.out.println("s1 score: " + s1.getScore()); // Expected: s1 score: 95.0
 
-    //     // printReport() // expects: nothing // outputs: prints a formatted report block
-    //     s1.printReport();
-    //     // Expected:
-    //     // --- Report ---
-    //     // Name: Ana Cruz
-    //     // ID: 101
-    //     // Grades: 90.0 100.0 95.0
-    //     // Average: 95.0
+        // printReport() // expects: nothing // outputs: prints a formatted report block
+        s1.printReport();
+        // Expected:
+        // --- Report ---
+        // Name: Ana Cruz
+        // ID: 101
+        // Grades: 90.0 100.0 95.0
+        // Average: 95.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 7: equalsIgnoreCase practice via matchesName()
-    // // ===================================================================
-    // private static void test7_EqualsIgnoreCase() {
-    //     System.out.println("========== TEST 7: equalsIgnoreCase practice via matchesName() ==========");
+    // ===================================================================
+    // TEST 7: equalsIgnoreCase practice via matchesName()
+    // ===================================================================
+    private static void test7_EqualsIgnoreCase() {
+        System.out.println("========== TEST 7: equalsIgnoreCase practice via matchesName() ==========");
 
-    //     Student s1 = new Student("Ana Cruz", 101, 90, 90, 90);
+        Student s1 = new Student("Ana Cruz", 101, 90, 90, 90);
 
-    //     // matchesName(String other) // expects: a name string
-    //     // outputs: true if it matches this student's name, IGNORING CASE
-    //     System.out.println("s1.matchesName(\"ana cruz\"): " + s1.matchesName("ana cruz")); // Expected: true
-    //     System.out.println("s1.matchesName(\"Ben\"): " + s1.matchesName("Ben"));            // Expected: false
+        // matchesName(String other) // expects: a name string
+        // outputs: true if it matches this student's name, IGNORING CASE
+        System.out.println("s1.matchesName(\"ana cruz\"): " + s1.matchesName("ana cruz")); // Expected: true
+        System.out.println("s1.matchesName(\"Ben\"): " + s1.matchesName("Ben"));            // Expected: false
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
-    // // ===================================================================
-    // // TEST 8: HonorStudent -- multi-level inheritance + super chaining
-    // // ===================================================================
-    // private static void test8_HonorStudentInheritance() {
-    //     System.out.println("========== TEST 8: HonorStudent -- multi-level inheritance + super chaining ==========");
+    // ===================================================================
+    // TEST 8: HonorStudent -- multi-level inheritance + super chaining
+    // ===================================================================
+    private static void test8_HonorStudentInheritance() {
+        System.out.println("========== TEST 8: HonorStudent -- multi-level inheritance + super chaining ==========");
 
-    //     // HonorStudent(String name, int id, double g1, double g2, double g3, double bonusPoints)
-    //     // expects: same as Student's 3-grade constructor, PLUS a bonus
-    //     // outputs: getScore() = Student's average + bonus
-    //     HonorStudent h1 = new HonorStudent("Dana Santos", 201, 90, 90, 90, 3);
+        // HonorStudent(String name, int id, double g1, double g2, double g3, double bonusPoints)
+        // expects: same as Student's 3-grade constructor, PLUS a bonus
+        // outputs: getScore() = Student's average + bonus
+        HonorStudent h1 = new HonorStudent("Dana Santos", 201, 90, 90, 90, 3);
 
-    //     // getScore() -- OVERRIDDEN AGAIN, must call super.getScore() internally
-    //     System.out.println("h1 score: " + h1.getScore()); // Expected: h1 score: 93.0
+        // getScore() -- OVERRIDDEN AGAIN, must call super.getScore() internally
+        System.out.println("h1 score: " + h1.getScore()); // Expected: h1 score: 93.0
 
-    //     // displayInfo() -- OVERRIDDEN AGAIN, must call super.displayInfo() internally
-    //     h1.displayInfo();
-    //     // Expected:
-    //     // *** HONOR STUDENT ***
-    //     // Student: Dana Santos (ID: 201)
-    //     // Grades: 90.0 90.0 90.0
-    //     // Average: 90.0
+        // displayInfo() -- OVERRIDDEN AGAIN, must call super.displayInfo() internally
+        h1.displayInfo();
+        // Expected:
+        // *** HONOR STUDENT ***
+        // Student: Dana Santos (ID: 201)
+        // Grades: 90.0 90.0 90.0
+        // Average: 90.0
 
-    //     // printReport() -- OVERRIDDEN AGAIN, must call super.printReport() internally
-    //     h1.printReport();
-    //     // Expected:
-    //     // --- Report ---
-    //     // Name: Dana Santos
-    //     // ID: 201
-    //     // Grades: 90.0 90.0 90.0
-    //     // Average: 90.0
-    //     // Honor Bonus: 3.0
+        // printReport() -- OVERRIDDEN AGAIN, must call super.printReport() internally
+        h1.printReport();
+        // Expected:
+        // --- Report ---
+        // Name: Dana Santos
+        // ID: 201
+        // Grades: 90.0 90.0 90.0
+        // Average: 90.0
+        // Honor Bonus: 3.0
 
-    //     // POLYMORPHISM CHECK: upcast to Person, displayInfo() must still run
-    //     // the HonorStudent version (not Person's, not Student's)
-    //     Person p = h1;
-    //     p.displayInfo();
-    //     // Expected (SAME as h1.displayInfo() above):
-    //     // *** HONOR STUDENT ***
-    //     // Student: Dana Santos (ID: 201)
-    //     // Grades: 90.0 90.0 90.0
-    //     // Average: 90.0
+        // POLYMORPHISM CHECK: upcast to Person, displayInfo() must still run
+        // the HonorStudent version (not Person's, not Student's)
+        Person p = h1;
+        p.displayInfo();
+        // Expected (SAME as h1.displayInfo() above):
+        // *** HONOR STUDENT ***
+        // Student: Dana Santos (ID: 201)
+        // Grades: 90.0 90.0 90.0
+        // Average: 90.0
 
-    //     System.out.println();
-    // }
+        System.out.println();
+    }
 
     // // ===================================================================
     // // TEST 9: Object References ("Pointers") -- passing objects into methods

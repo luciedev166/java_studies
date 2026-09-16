@@ -1,4 +1,4 @@
-package Practice;
+
 
 /*
 SPEC — build these classes to make Main run correctly:
@@ -35,6 +35,7 @@ Class - Intern (extends Employee):
 */
 
 public class Main {
+
     public static void main(String[] args) {
         Employee[] staff = {
             new Manager("Ana", 32, "M100", 30000, 5000),

@@ -6,7 +6,7 @@ public class Salmon extends Fish {
 
     public String makeSound()
     {
-        return "Blub";
+        return "Blub`";
     }
     
 } 
